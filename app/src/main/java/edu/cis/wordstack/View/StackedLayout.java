@@ -39,7 +39,7 @@ public class StackedLayout extends LinearLayout {
     }
 
     public boolean empty() {
-        return tiles.empty();
+        return tiles.isEmpty();
     }
 
     public void clear() {
