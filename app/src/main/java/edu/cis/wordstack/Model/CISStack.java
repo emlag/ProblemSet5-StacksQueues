@@ -51,7 +51,7 @@ public class CISStack<T>
      *
      * @return true if this queue is empty; false otherwise
      */
-    public boolean empty()
+    public boolean isEmpty()
     {
         return false;
     }
