@@ -1,21 +1,34 @@
-package edu.cis.wordstack.Model;
+package edu.cis.wordstack.Model.Queue;
 
-public class CISLinkedQueue<T>
+/*
+ * A STATIC implementation of a Queue that uses
+ * a circular algorithm.
+ */
+
+public class CISCircularQueue<T>
 {
-    private Node<T> first;    // beginning of queue
-    private Node<T> last;     // end of queue
-    private int n;               // number of elements on queue
-
-    private static class Node<T>
-    {
-        private T item;
-        private Node<T> next;
-    }
+    T[] innerArr;
 
     /*
-     * Constructor should initialize instance variables to appropriate values.
+     * Empty constructor, default size must be 10
+     * You must use an ARRAY to implement this Queue
+     * Initialize any instance variables that are appropriate
      */
-    public CISLinkedQueue() {
+    public CISCircularQueue()
+    {
+        innerArr = (T[]) new Object[10];
+    }
+
+
+    /*
+     * One arg constructor
+     * You must use an ARRAY to implement this Queue
+     * Initialize any instance variables that are appropriate
+     *
+     * @param desired capacity for the queue
+     */
+    public CISCircularQueue(int capacity)
+    {
 
     }
 
@@ -25,6 +38,7 @@ public class CISLinkedQueue<T>
      * MUST behave like a circular queue
      *
      * @param  item the item to add
+     * @throws NoSuchElementException if this queue is full
      */
     public void enqueue(T item)
     {
@@ -47,8 +61,8 @@ public class CISLinkedQueue<T>
      *
      * Returns the item LEAST recently added to this queue.
      *
-     * @throws NoSuchElementException if this queue is empty
      * @return item LEAST recently added, without removing it
+     * @throws NoSuchElementException if this queue is empty
      */
 
     public T peek()
@@ -73,6 +87,5 @@ public class CISLinkedQueue<T>
     public int size() {
         return -1;
     }
-
 
 }

@@ -5,17 +5,48 @@ import org.junit.Test;
 import java.util.NoSuchElementException;
 import java.util.Random;
 
-import edu.cis.wordstack.Model.Queue.CISStackQueue;
+import edu.cis.wordstack.Model.Queue.CISCircularQueue;
 
 import static org.junit.Assert.*;
 
-public class StackQueueTest
+public class CircularQueueTest
 {
+    @Test
+    public void simpleSize()
+    {
+        CISCircularQueue<Integer> testQueue = new CISCircularQueue<>();
+
+        assertEquals(0, testQueue.size());
+        testQueue.enqueue(5);
+        testQueue.enqueue(10);
+        testQueue.enqueue(11);
+        testQueue.enqueue(5);
+        assertEquals(4, testQueue.size());
+        testQueue.enqueue(1);
+        testQueue.enqueue(0);
+        assertEquals(6, testQueue.size());
+    }
+
+    @Test
+    public void simplePeek()
+    {
+        CISCircularQueue<String> testStringQueue = new CISCircularQueue<>();
+
+        testStringQueue.enqueue("Ed");
+        assertEquals("Ed", testStringQueue.peek());
+
+        testStringQueue.enqueue("Nitu");
+        testStringQueue.enqueue("Sanaz");
+
+        assertEquals("Ed", testStringQueue.peek());
+        assertEquals("Ed", testStringQueue.peek());
+    }
+
     @Test
     public void size()
     {
         int expectedSize = new Random().nextInt(100) + 1;
-        CISStackQueue<String> queue = new CISStackQueue<>();
+        CISCircularQueue<String> queue = new CISCircularQueue<>(expectedSize + 1);
         for(int i = 0; i < expectedSize; i++)
         {
             queue.enqueue("a");
@@ -29,16 +60,26 @@ public class StackQueueTest
     @Test(expected = NoSuchElementException.class)
     public void peekException()
     {
-        CISStackQueue<String> queue = new CISStackQueue<>();
+        CISCircularQueue<String> queue = new CISCircularQueue<>();
         queue.peek();
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void simpleFull()
+    {
+        CISCircularQueue<String> queue = new CISCircularQueue<>();
+        for(int i = 0; i < 11; i++)
+        {
+            queue.enqueue("a");
+        }
     }
 
     @Test
     public void peek()
     {
-        CISStackQueue<String> queue = new CISStackQueue<>();
-        queue.enqueue("hi");
         int enqueueAmount = new Random().nextInt(50) + 1;
+        CISCircularQueue<String> queue = new CISCircularQueue<>(enqueueAmount + 1);
+        queue.enqueue("hi");
         for(int i = 0; i < enqueueAmount; i++)
         {
             queue.enqueue("a");
@@ -49,24 +90,12 @@ public class StackQueueTest
     }
 
     @Test
-    public void peekOnce()
-    {
-        CISStackQueue<String> queue = new CISStackQueue<>();
-        queue.enqueue("first");
-        queue.enqueue("second");
-        queue.enqueue("third");
-        queue.size();
-        queue.peek();
-        assertEquals("first", queue.peek());
-    }
-
-    @Test
     public void enqueue()
     {
-        CISStackQueue<Character> queue = new CISStackQueue<>();
+        int enqueueAmount = new Random().nextInt(100) + 1;
+        CISCircularQueue<Character> queue = new CISCircularQueue<>(enqueueAmount + 2);
         char firstChar = (char) (new Random().nextInt(26) + 'a');
         queue.enqueue(firstChar);
-        int enqueueAmount = new Random().nextInt(100) + 1;
         for(int i = 0; i < enqueueAmount; i++)
         {
             char randomChar = (char) (new Random().nextInt(26) + 'a');
@@ -83,8 +112,8 @@ public class StackQueueTest
     @Test(expected = NoSuchElementException.class)
     public void dequeueException()
     {
-        CISStackQueue<Integer> queue = new CISStackQueue<>();
         int enqueueAmount = new Random().nextInt(100) + 1;
+        CISCircularQueue<Integer> queue = new CISCircularQueue<>(enqueueAmount + 1);
         for(int i = 0; i < enqueueAmount; i++)
         {
             queue.enqueue(i);
@@ -98,8 +127,8 @@ public class StackQueueTest
     @Test
     public void dequeueOnce()
     {
-        CISStackQueue<Integer> queue = new CISStackQueue<>();
         int enqueueAmount = new Random().nextInt(100) + 1;
+        CISCircularQueue<Integer> queue = new CISCircularQueue<>(enqueueAmount + 1);
         int expected = new Random().nextInt(1000) + 1;
         queue.enqueue(expected);
         for(int i = 0; i < enqueueAmount; i++)
@@ -115,8 +144,8 @@ public class StackQueueTest
     @Test
     public void dequeueRandomValue()
     {
-        CISStackQueue<Character> queue = new CISStackQueue<>();
         int enqueueAmount = new Random().nextInt(100) + 2;
+        CISCircularQueue<Character> queue = new CISCircularQueue<>(enqueueAmount + 1);
         int nextDequeue = new Random().nextInt(enqueueAmount - 1) + 1;
         System.out.println("dequeueValue enqueueAmount: " + enqueueAmount);
         System.out.println("dequeueValue nextDequeue: " + nextDequeue);
@@ -154,8 +183,8 @@ public class StackQueueTest
     @Test
     public void isEmpty()
     {
-        CISStackQueue<Integer> queue = new CISStackQueue<>();
         int enqueueAmount = new Random().nextInt(100) + 1;
+        CISCircularQueue<Integer> queue = new CISCircularQueue<>(enqueueAmount + 1);
         System.out.println("isEmpty enqueueAmount: " + enqueueAmount);
         for(int i = 0; i < enqueueAmount; i++)
         {

@@ -1,13 +1,25 @@
-package edu.cis.wordstack.Model;
+package edu.cis.wordstack.Model.Stack;
 
-public class CISStack<T>
+/*
+ * A DYNAMIC implementation of a stack.
+ */
+
+public class CISLinkedStack<T>
 {
+    private Node<T> first;
+    private int n;
+
     /*
      * Empty constructor
      * You must use an array to implement this Stack
      * Initialize any instance variables that are appropriate
      */
-    public CISStack()
+    private static class Node<T> {
+        private T item;
+        private Node<T> next;
+    }
+
+    public CISLinkedStack()
     {
 
     }
@@ -29,6 +41,7 @@ public class CISStack<T>
      * Remove the next item this stack to preserve LIFO order.
      *
      * @return the next item in the stack
+     * @throws NoSuchElementException if this queue is empty
      */
     public T pop()
     {
@@ -40,6 +53,7 @@ public class CISStack<T>
      * Return the next item this stack to preserve LIFO order, do not remove
      *
      * @return the next item in the stack
+     * @throws NoSuchElementException if this queue is empty
      */
     public T peek()
     {
@@ -47,17 +61,18 @@ public class CISStack<T>
     }
 
     /**
-     * Returns true if this queue is empty.
+     * Returns true if this stack is empty.
      *
-     * @return true if this queue is empty; false otherwise
+     * @return true if this stack is empty; false otherwise
      */
     public boolean isEmpty()
     {
         return false;
     }
 
+
     /**
-     * Returns size of this queue.
+     * Returns the amount of object being held by the stack.
      *
      * @return size as int
      */
