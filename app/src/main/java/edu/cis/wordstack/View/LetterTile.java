@@ -1,13 +1,12 @@
-package edu.cis.wordstack;
+package edu.cis.wordstack.View;
 
-import android.content.ClipData;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.widget.LinearLayout;
+
 import androidx.appcompat.widget.AppCompatTextView;
 
 
@@ -30,7 +29,7 @@ public class LetterTile extends AppCompatTextView {
 
     public void moveToViewGroup(ViewGroup targetView) {
         ViewParent parent = getParent();
-        if (parent instanceof StackedLayout ) {
+        if (parent instanceof StackedLayout) {
             StackedLayout owner = (StackedLayout) parent;
             owner.pop();
             targetView.addView(this);

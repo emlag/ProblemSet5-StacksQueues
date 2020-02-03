@@ -1,4 +1,4 @@
-package edu.cis.wordstack;
+package edu.cis.wordstack.View;
 
 import android.content.Context;
 import android.view.View;
@@ -6,9 +6,11 @@ import android.widget.LinearLayout;
 
 import java.util.Stack;
 
+import edu.cis.wordstack.Model.CISStack;
+
 public class StackedLayout extends LinearLayout {
 
-    private Stack<View> tiles = new Stack();
+    private CISStack<View> tiles = new CISStack<>();
 
     public StackedLayout(Context context) {
         super(context);

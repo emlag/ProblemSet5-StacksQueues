@@ -1,4 +1,4 @@
-package edu.cis.wordstack;
+package edu.cis.wordstack.Controller;
 
 import android.content.res.AssetManager;
 import android.graphics.Color;
@@ -18,6 +18,10 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
+
+import edu.cis.wordstack.View.LetterTile;
+import edu.cis.wordstack.R;
+import edu.cis.wordstack.View.StackedLayout;
 
 public class MainActivity extends AppCompatActivity {
 

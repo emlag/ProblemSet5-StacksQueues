@@ -1,4 +1,6 @@
-package edu.cis.wordstack;
+package edu.cis.wordstack.Model;
+
+import edu.cis.wordstack.Model.CISStack;
 
 public class CISStackQueue<T>
 {
@@ -7,8 +9,8 @@ public class CISStackQueue<T>
 
     public CISStackQueue()
     {
-        stack1 = new CISStack<T>();
-        stack2 = new CISStack<T>();
+        stack1 = new CISStack<>();
+        stack2 = new CISStack<>();
     }
 
     /**

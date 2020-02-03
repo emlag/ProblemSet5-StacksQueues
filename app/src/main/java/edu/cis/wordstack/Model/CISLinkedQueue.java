@@ -1,4 +1,4 @@
-package edu.cis.wordstack;
+package edu.cis.wordstack.Model;
 
 public class CISLinkedQueue<T>
 {
@@ -63,6 +63,15 @@ public class CISLinkedQueue<T>
      */
     public boolean isEmpty() {
         return false;
+    }
+
+    /**
+     * Returns size of this queue.
+     *
+     * @return size as int
+     */
+    public int size() {
+        return -1;
     }
 
 

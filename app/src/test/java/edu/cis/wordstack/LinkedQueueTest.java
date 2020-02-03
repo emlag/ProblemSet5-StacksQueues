@@ -4,15 +4,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class StackTests
+public class LinkedQueueTest
 {
-    @Test
-    public void push()
-    {
-    }
 
     @Test
-    public void pop()
+    public void size()
     {
     }
 
@@ -22,12 +18,17 @@ public class StackTests
     }
 
     @Test
-    public void empty()
+    public void enqueue()
     {
     }
 
     @Test
-    public void size()
+    public void dequeue()
+    {
+    }
+
+    @Test
+    public void isEmpty()
     {
     }
 }
