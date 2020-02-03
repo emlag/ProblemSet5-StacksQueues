@@ -89,7 +89,7 @@ public class CISStack<T>
     }
 
     /**
-     * Returns the amount of object being held by the stack.
+     * Returns the number of objects being held by the stack.
      *
      * @return size as int
      */

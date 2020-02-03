@@ -49,7 +49,7 @@ public class CISLinkedQueue<T>
 
     /* Peek
      *
-     * Returns the item LEAST recently added to this queue.
+     * Returns the item LEAST recently added to this queue, does not remove it.
      *
      * @throws NoSuchElementException if this queue is empty
      * @return item LEAST recently added, without removing it
@@ -70,7 +70,7 @@ public class CISLinkedQueue<T>
     }
 
     /**
-     * Returns size of this queue.
+     * Returns number of items being held by this queue.
      *
      * @return size as int
      */

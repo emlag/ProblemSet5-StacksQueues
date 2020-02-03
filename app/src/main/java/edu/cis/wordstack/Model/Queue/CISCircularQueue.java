@@ -48,6 +48,7 @@ public class CISCircularQueue<T>
     /* Dequeue
      *
      * Removes and returns the item on this queue that was least recently added.
+     * MUST behave like a circular queue
      *
      * @return the item on this queue that was least recently added
      * @throws NoSuchElementException if this queue is empty
@@ -78,6 +79,18 @@ public class CISCircularQueue<T>
     public boolean isEmpty() {
         return false;
     }
+
+
+    /**
+     * Returns true if this queue is full.
+     *
+     * @return true if this queue is full; false otherwise
+     */
+    public boolean isFull()
+    {
+        return false;
+    }
+
 
     /**
      * Returns size of this queue.
