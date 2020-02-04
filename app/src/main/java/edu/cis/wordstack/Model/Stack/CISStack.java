@@ -30,14 +30,13 @@ public class CISStack<T>
 
     }
 
-
     /* Push
      *
      * Adds the item to this stack to preserve LIFO order.
      *
      * @param  item the item to add
      * @return return the item added
-     * @throws NoSuchElementException if this queue is full
+     * @throws NoSuchElementException if this stack is full
      */
     public T push(T item)
     {
@@ -49,7 +48,7 @@ public class CISStack<T>
      * Remove the next item this stack to preserve LIFO order.
      *
      * @return the next item in the stack
-     * @throws NoSuchElementException if this queue is empty
+     * @throws NoSuchElementException if this stack is empty
      */
     public T pop()
     {
@@ -61,7 +60,7 @@ public class CISStack<T>
      * Return the next item this stack to preserve LIFO order, do not remove
      *
      * @return the next item in the stack
-     * @throws NoSuchElementException if this queue is empty
+     * @throws NoSuchElementException if this stack is empty
      */
     public T peek()
     {

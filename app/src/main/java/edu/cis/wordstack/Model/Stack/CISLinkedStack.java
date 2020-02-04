@@ -41,7 +41,7 @@ public class CISLinkedStack<T>
      * Remove the next item this stack to preserve LIFO order.
      *
      * @return the next item in the stack
-     * @throws NoSuchElementException if this queue is empty
+     * @throws NoSuchElementException if this stack is empty
      */
     public T pop()
     {
@@ -53,7 +53,7 @@ public class CISLinkedStack<T>
      * Return the next item this stack to preserve LIFO order, do not remove
      *
      * @return the next item in the stack
-     * @throws NoSuchElementException if this queue is empty
+     * @throws NoSuchElementException if this stack is empty
      */
     public T peek()
     {
