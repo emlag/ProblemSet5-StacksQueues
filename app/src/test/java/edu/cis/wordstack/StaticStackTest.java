@@ -103,9 +103,12 @@ public class StaticStackTest
             {
                 stack.push(nextIn);
             }
-            stack.push(new Random().nextInt(100) + 1);
+            else
+            {
+                stack.push(new Random().nextInt(100) + 1);
+            }
         }
-        for(int i = nextPop; i < pushAmount; i++)
+        for(int i = nextPop; i < pushAmount - 1; i++)
         {
             stack.pop();
         }
