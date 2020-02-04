@@ -11,7 +11,7 @@ public class CISLinkedStack<T>
 
     /*
      * Empty constructor
-     * You must use an array to implement this Stack
+     * You must use nodes to implement this Stack
      * Initialize any instance variables that are appropriate
      */
     private static class Node<T> {
